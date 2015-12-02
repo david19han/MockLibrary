@@ -1,4 +1,4 @@
-package murach.business;
+package edu.elon.business;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -18,11 +18,10 @@ public class CheckoutCart implements Serializable {
         return items.size();
     }
     
-    public void removeItem(LineItem item) {
-        String UserID = item.getUserID();
+    public void removeItem(String userID) {
         for (int i = 0; i < items.size(); i++) {
             LineItem lineItem = items.get(i);
-            if (lineItem.getUserID().equals(UserID)) {
+            if (lineItem.getUserID().equals(userID)) {
                 items.remove(i);
                 return;
             }

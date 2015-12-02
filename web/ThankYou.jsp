@@ -9,9 +9,20 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>CSC 330 Homework 4</title>
+        <link rel ="stylesheet" href ="styles/main.css" type="text/css"/>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <%@ include file="/header.jsp" %>
+        <div class="redbox">
+            <p> Thank you for your patronage of the Belk Library.  You've
+                successfully checked out the book, ${user.bookTitle}  .  Please note that this book
+                is due back on ${user.strDueDate} .  A friendly email reminder will be sent to you
+                if your book becomes overdue.
+            </p>
+            <p><a href='Home.jsp' title='Return to front page'>Return to front
+                    page</a></p>
+        </div>
     </body>
+    <%@ include file="/footer.jsp" %>
 </html>

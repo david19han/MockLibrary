@@ -1,15 +1,62 @@
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
-/* 
-    Created on : Dec 1, 2015, 8:05:14 PM
-    Author     : jeniferrhodes
-*/
-
 body{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+
+img{
+    padding-top: 1em;
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+}
+
+
+div.redbox{
+    border: 2px solid red;
     margin-left: auto;
     margin-right: auto;
-    width:35em;
+    width: 40em;
+
 }
+p{
+    padding-left: 2em;
+}
+
+h2{
+    margin-left: 1em;
+}
+
+h1{
+    text-align: center;
+}
+
+label{
+    text-align: left;
+    float: left;
+    width: 7em;
+}
+
+input[type=text],
+input[type=email] {
+  margin-left: .5em;
+  margin-bottom: .2em;
+  width: 20em;
+
+}
+
+input[type=submit] {
+  padding: .2em 1em;
+  margin-left: 13.3em;
+}
+
+form {
+  clear: both;
+}
+
+
+  #footer{
+    border-color: navy;
+    border-style:solid ;
+    border-width: medium 0 0 0;
+    width: 100%;
+  }

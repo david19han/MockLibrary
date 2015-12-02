@@ -10,10 +10,13 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>CSC 330 Homework 4</title>
+        <link rel ="stylesheet" href="styles/main.css" type="text/css"/>
     </head>
     <body>
-        <h1>Checkout a book</h1>
-        <form id="book-form" name="book-form" method="post" action="emailList">
+      <%@include file="/header.jsp" %>
+      <div class="redbox">
+        <h2>Checkout a book</h2>
+        <form id="book-form" name="book-form" method="post" action="library">
             <input type="hidden" name="action" value="add">
         <p>
             <label for="FirstName"> First Name: </label>
@@ -29,5 +32,7 @@
             <input name="bookTitle" type="text" id="BookTitle" /></p>
         <input type="submit"  value="Checkout" id="checkout" name="checkout">
         </form>
+      </div>
     </body>
+    <%@ include file="/footer.jsp"%>
 </html>

@@ -1,4 +1,4 @@
-package murach.data;
+package edu.elon.data;
 
 import java.sql.*;
 

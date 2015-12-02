@@ -3,10 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/Users/davidhan/Documents/CSIII_Homework/Homework4b/src/java/murach/email/EmailListServlet.java</file>
             <file>file:/Users/davidhan/Documents/CSIII_Homework/Homework4b/src/java/murach/business/User.java</file>
             <file>file:/Users/davidhan/Documents/CSIII_Homework/Homework4b/web/Manage.jsp</file>
-            <file>file:/Users/davidhan/Documents/CSIII_Homework/Homework4b/web/CheckoutBook.jsp</file>
+            <file>file:/Users/davidhan/Documents/CSIII_Homework/Homework4b/web/ThankYou.jsp</file>
             <file>file:/Users/davidhan/Documents/CSIII_Homework/Homework4b/web/Home.jsp</file>
+            <file>file:/Users/davidhan/Documents/CSIII_Homework/Homework4b/web/WEB-INF/web.xml</file>
+            <file>file:/Users/davidhan/Documents/CSIII_Homework/Homework4b/src/java/murach/data/UserDB.java</file>
         </group>
     </open-files>
 </project-private>

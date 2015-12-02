@@ -9,7 +9,7 @@
 <html>
     <head>
         <title>CSC 330 Homework 4</title>
-    <link rel ="stylesheet" href ="styles/mainmurach.css" type="text/css"/>        
+    <link rel ="stylesheet" href ="styles/main.css" type="text/css"/>        
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
@@ -30,15 +30,25 @@
   <tr>
     <td><c:out value='${item.usercheckout.patronName}'/></td>
     <td>${item.usercheckout.email}</td>
-  
+    <td>${item.usercheckout.bookTitle}</td>
+    <td>${item.usercheckout.strDate}</td>
+    <td>${item.overdue}</td>
+    <td>
+      <form action="library" method="post">
+        <input type="hidden" name="userID" 
+               value="<c:out value='${item.userID}'/>">
+        <input type="hidden" name="item" 
+               value="<c:out value='${item}'/>">
+         <input type="hidden" name="action" value="checkin">
+        <input type="submit" value="Check in">
+      </form>
+    </td>
   </tr>
 </c:forEach>
 </table>
 
-<form action="" method="post">
-  <input type="hidden" name="action" value="shop">
-  <input type="submit" value="Return to front page">
-</form>
+<a href="library?action=return" title="Return to front page" >Return to front page</a>
+
 
     </body>
     <%@ include file="/footer.jsp" %>
