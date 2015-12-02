@@ -5,31 +5,30 @@ import java.text.DateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
-public class User implements Serializable {
+public class UserCheckOut implements Serializable {
     private String patronName;
     private String emailAddress;
     private String bookTitle;
-    private Calendar dueDate;
+    private String strdate;
 /*
     private String dueDate;
     private String overDue;
 */
-    public User() {
+    public UserCheckOut() {
         patronName = "";
         emailAddress = "";
         bookTitle = "";
-        dueDate = null;
+        strdate = "";
 /*        
         dueDate = "";
         overDue = "";
  */       
     }
-
-    public User(String patronName, String emailAddress, String bookTitle,Calendar dueDate) {
+    public UserCheckOut(String patronName, String emailAddress, String bookTitle,String strdate) {
         this.patronName = patronName;
         this.emailAddress = emailAddress;
         this.bookTitle = bookTitle;
-        this.dueDate = dueDate;
+        this.strdate = strdate;
 /*       
         this.dueDate = dueDate;
         this.overDue = overDue;
@@ -51,27 +50,19 @@ public class User implements Serializable {
     public void setPatronName(String patronName) {
         this.patronName = patronName;
     }
+
     public String getBookTitle() {
         return bookTitle;
     }
+
     public void setBookTitle(String bookTitle) {
         this.bookTitle = bookTitle;
     }
-    public Calendar getDueDate() {
-        return dueDate;
+    public String getStrDate() {
+        return strdate;
     }
-    public void setDueDate(Calendar dueDate) {
-        this.dueDate = dueDate;
-    }
-    public String getOverDue() {
-        int diff = dueDate.compareTo(Calendar.getInstance());
-        String overdue;
-        if(diff<0){
-        overdue = "overdue";
-        }else{
-          overdue="";
-        }
-        return overdue;
+    public void setStrDate(String strdate) {
+        this.strdate = strdate;
     }
 }
 /*

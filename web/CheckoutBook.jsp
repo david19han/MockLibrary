@@ -13,20 +13,20 @@
     </head>
     <body>
         <h1>Checkout a book</h1>
-        <form id="book-form" name="book-form" method="post" action="goelon">
+        <form id="book-form" name="book-form" method="post" action="emailList">
             <input type="hidden" name="action" value="add">
         <p>
             <label for="FirstName"> First Name: </label>
-            <input name="FirstName" type="text" id="FirstName" required/></p>
+            <input name="firstName" type="text" id="FirstName" required/></p>
         <p>
             <label for="LastName"> Last Name: </label>
-            <input name="LastName" type="text" id="LastName" required/></p>
+            <input name="lastName" type="text" id="LastName" required/></p>
         <p>
             <label for="Email"> Email: </label>
-            <input name="Email" type="email" id="Email" required/></p>
+            <input name="email" type="email" id="Email" required/></p>
         <p>
             <label for="BookTitle"> Book Title: </label>
-            <input name="BookTitle" type="text" id="BookTitle" /></p>
+            <input name="bookTitle" type="text" id="BookTitle" /></p>
         <input type="submit"  value="Checkout" id="checkout" name="checkout">
         </form>
     </body>

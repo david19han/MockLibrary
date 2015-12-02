@@ -1,53 +1,73 @@
 package murach.email;
 
 import java.io.*;
+import java.sql.SQLException;
+import java.text.DateFormat;
+import java.util.Date;
 import javax.servlet.*;
 import javax.servlet.http.*;
+import java.util.Calendar;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import murach.business.CheckoutCart;
 
 import murach.business.User;
 import murach.data.UserDB;
 
 public class EmailListServlet extends HttpServlet {
+   @Override
+    protected void doGet(HttpServletRequest request,
+            HttpServletResponse response)
+            throws ServletException, IOException {
+      doPost(request,response);
+    }
 
     @Override
     protected void doPost(HttpServletRequest request,
             HttpServletResponse response)
             throws ServletException, IOException {
-        String url = "/index.html";
+      HttpSession session = request.getSession();
+        String url = "/CheckoutBook.jsp";
         
         // get current action
         String action = request.getParameter("action");
         if (action == null) {
-            action = "join";  // default action
+           url = "/CheckoutBook.jsp";
         }
-
-        // perform action and set URL to appropriate page
-        if (action.equals("join")) {
-            url = "/index.jsp";    // the "join" page
-        } 
-        else if (action.equals("add")) {
+        else if (action.equals("add")){
             // get parameters from the request
             String firstName = request.getParameter("firstName");
             String lastName = request.getParameter("lastName");
             String email = request.getParameter("email");
+            String bookTitle = request.getParameter("bookTitle");
 
+            String patronname = firstName + lastName;
+            
+            Calendar duedate= Calendar.getInstance();
+            duedate.add(Calendar.DATE, 14);
+            Date time = duedate.getTime();
             // store data in User object
-            User user = new User(firstName, lastName, email);
-
+            User user = new User(patronname,email,bookTitle,duedate);
             // validate the parameters
-            String message;
-            if (UserDB.emailExists(user.getEmail())) {
-                message = "This email address already exists.<br>" +
-                          "Please enter another email address.";
-                url = "/index.jsp";
+            UserDB.insert(user);
+            session.setAttribute("user", user);
+            url = "/ThankYou.jsp";
+        }
+        else{
+        try {
+          String userID = request.getParameter("userID");
+          String quantityString = request.getParameter("quantity");
+          int quantity = Integer.parseInt(quantityString);
+          CheckoutCart cart = UserDB.getCheckoutList();
+          session.setAttribute("cart", cart);
+          if (quantity == 0) {
+              //cart.removeItem(lineItem);
             }
-            else {
-                message = "";
-                url = "/thanks.jsp";
-                UserDB.insert(user);
-            }
-            request.setAttribute("user", user);
-            request.setAttribute("message", message);
+          
+          url = "/Manage.jsp";
+        } catch (SQLException ex) {
+          System.out.println(ex);
+        }
         }
         getServletContext()
                 .getRequestDispatcher(url)

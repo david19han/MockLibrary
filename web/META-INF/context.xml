@@ -31,5 +31,20 @@
        locally. Ideally, this will be same anme as the one on OpenShift,
        need to have user name of our local mysql server and the password
        for your local mysql servr -->
-  <Resource auth="Container" driverClassName="com.mysql.jdbc.Driver" logAbandoned="true" maxActive="100" maxIdle="30" maxWait="10000" name="jdbc/MySQLDS" password="mysqluser" removeAbandoned="true" removeAbandonedTimeout="60" type="javax.sql.DataSource" url="jdbc:mysql://localhost:3306/mvc" username="root"/>
+  <!--
+  <Resource name="jdbc/MySQLDS" auth="Container" 
+        driverClassName="com.mysql.jdbc.Driver" 
+        url="jdbc:mysql://localhost:3307/mvc2" 
+        username="root" password="" 
+        maxActive="100" maxIdle="30" maxWait="10000" 
+        logAbandoned="true" removeAbandoned="true" 
+        removeAbandonedTimeout="60" type="javax.sql.DataSource" />  
+        -->
+        <Resource name="jdbc/mvc2" auth="Container" 
+        driverClassName="com.mysql.jdbc.Driver" 
+        url="jdbc:mysql://localhost:3307/mvc2?autoReconnect=true" 
+        username="root" password="" 
+        maxActive="100" maxIdle="30" maxWait="10000" 
+        logAbandoned="true" removeAbandoned="true" 
+        removeAbandonedTimeout="60" type="javax.sql.DataSource" /> 
 </Context>
