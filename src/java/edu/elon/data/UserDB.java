@@ -8,8 +8,18 @@ import edu.elon.business.LineItem;
 import edu.elon.business.User;
 import edu.elon.business.UserCheckOut;
 
+/**
+ * User database class that allows for users to checkout a book or insert an 
+ * entry, or check in a book or delete an entry from the database. Also includes
+ * method that returns arraylist of all data entries from database.
+ * @author davidhan
+ */
 public class UserDB {
-
+/**
+ * Inserts user entry into user table.
+ * @param user
+ * @return 
+ */
     public static int insert(User user) {
         ConnectionPool pool = ConnectionPool.getInstance();
         Connection connection = pool.getConnection();
@@ -40,7 +50,11 @@ public class UserDB {
             pool.freeConnection(connection);
         }
     }
-
+/**
+ * Deletes specific entry based on userID from database.
+ * @param UserID
+ * @return 
+ */
     public static int delete(String UserID) {
         ConnectionPool pool = ConnectionPool.getInstance();
         Connection connection = pool.getConnection();
@@ -61,7 +75,11 @@ public class UserDB {
             pool.freeConnection(connection);
         }
     }
-    
+/**
+ * Returns an arraylist of all of the data entries from the database.
+ * @return
+ * @throws SQLException 
+ */    
     public static CheckoutCart getCheckoutList()
             throws SQLException{
       CheckoutCart cart = new CheckoutCart();
@@ -69,7 +87,7 @@ public class UserDB {
         Connection connection = pool.getConnection();
         PreparedStatement ps = null;
         
-        String query = "SELECT * FROM mvc2.User";
+        String query = "SELECT * FROM mvc.User";
         try {
             ps = connection.prepareStatement(query);
             ResultSet results= ps.executeQuery(query);
