@@ -18,7 +18,7 @@ public class ConnectionPool {
     try {
       InitialContext ic = new InitialContext();
       dataSource = (DataSource) ic.lookup("java:/comp/env/jdbc/MySQLDS");
-      //dataSource = (DataSource) ic.lookup("java:/comp/env/jdbc/mvc");
+      //dataSource = (DataSource) ic.lookup("java:/comp/env/jdbc/mvc2");
     } catch (NamingException e) {
       System.out.println(e);
     }

@@ -55,7 +55,7 @@ public class CheckOutServlet extends HttpServlet {
       // create a database with the same name as your database on
       // openshift and to then modify the next line of code to change
       // murach to your app name.
-      String dbURL = "jdbc:mysql://localhost:3307/mvc";
+      String dbURL = "jdbc:mysql://localhost:3307/mvc";//should be mvc
       String username = "root";
       String password = "";
 

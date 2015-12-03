@@ -1,62 +1,74 @@
-body{
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 0;
+body,
+html{
+  font-family: Arial, Helvetica, sans-serif;
+  height:100%;
+  margin: 0;
 }
-
+a{
+  font-weight:bold;
+}
 img{
-    padding-top: 1em;
-    display: block;
-    margin-left: auto;
-    margin-right: auto
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 1em;
 }
-
-
 div.redbox{
-    border: 2px solid red;
-    margin-left: auto;
-    margin-right: auto;
-    width: 40em;
-
+  border: 2px solid red;
+  margin-left: auto;
+  margin-right: auto;
+  padding:1.3em 0em;
+  width: 90%;
 }
 p{
-    padding-left: 2em;
+  margin: 0em 0em;
+  padding:0em 2em;
 }
-
 h2{
-    margin-left: 1em;
+  margin-left: 1.3em;
+  margin-top:0;
 }
-
 h1{
-    text-align: center;
+  text-align: center;
 }
-
 label{
-    text-align: left;
-    float: left;
-    width: 7em;
+  float: left;
+  text-align: left;
+  width: 7em;
 }
-
 input[type=text],
 input[type=email] {
   margin-left: .5em;
   margin-bottom: .2em;
-  width: 20em;
-
 }
-
-input[type=submit] {
-  padding: .2em 1em;
+#checkout {
   margin-left: 13.3em;
+  padding: .2em 1em;
 }
-
 form {
   clear: both;
 }
-
-
-  #footer{
-    border-color: navy;
-    border-style:solid ;
-    border-width: medium 0 0 0;
-    width: 100%;
-  }
+#footer{
+  border-color: navy;
+  border-style:solid ;
+  border-width: medium 0 0 0;
+  bottom:0;
+  padding: 1.5em 0em;
+  position:absolute;
+  width:100%;
+}
+#container {
+  min-height:100%;
+  position:relative;
+}
+table {
+  padding-left:2.5em;  
+  width: 50em;
+}
+td, th {
+  padding: .5em;
+  text-align: left;
+}
+#frontreturn{
+  padding-left:2.3em;
+}  

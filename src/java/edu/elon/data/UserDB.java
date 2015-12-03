@@ -87,7 +87,7 @@ public class UserDB {
         Connection connection = pool.getConnection();
         PreparedStatement ps = null;
         
-        String query = "SELECT * FROM mvc.User";
+        String query = "SELECT * FROM mvc.User";//should be mvc
         try {
             ps = connection.prepareStatement(query);
             ResultSet results= ps.executeQuery(query);

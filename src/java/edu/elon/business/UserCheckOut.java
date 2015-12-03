@@ -94,4 +94,17 @@ public class UserCheckOut implements Serializable {
     public void setStrDate(String strdate) {
         this.strdate = strdate;
     }
+    
+    public String getConvertStrDate(){
+      String year = Character.toString(strdate.charAt(0)) + 
+              Character.toString(strdate.charAt(1)) + 
+              Character.toString(strdate.charAt(2)) +
+              Character.toString(strdate.charAt(3));
+      String month = Character.toString(strdate.charAt(5)) + 
+              Character.toString(strdate.charAt(6));
+      String day = Character.toString(strdate.charAt(8)) + 
+              Character.toString(strdate.charAt(9));
+      String newdate = month + "-" + day + "-" + year;
+      return newdate;
+    }
 }

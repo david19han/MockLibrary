@@ -41,12 +41,12 @@
         removeAbandonedTimeout="60" type="javax.sql.DataSource" />  
         -->
   <!--
-        <Resource name="jdbc/mvc" auth="Container" 
+        <Resource name="jdbc/mvc2" auth="Container" 
         driverClassName="com.mysql.jdbc.Driver" 
-        url="jdbc:mysql://localhost:3307/mvc?autoReconnect=true" 
+        url="jdbc:mysql://localhost:3307/mvc2?autoReconnect=true" 
         username="root" password="" 
         maxActive="100" maxIdle="30" maxWait="10000" 
         logAbandoned="true" removeAbandoned="true" 
         removeAbandonedTimeout="60" type="javax.sql.DataSource" /> 
-        -->
+      -->  
 </Context>
